@@ -1,0 +1,174 @@
+:root {
+  --bg: #0f1115;
+  --panel: #171a21;
+  --line: #262b35;
+  --text: #e6e8ee;
+  --muted: #8b93a5;
+  --accent: #6c8cff;
+  font-family: system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(1200px 600px at 50% -10%, #1b2233 0%, var(--bg) 60%);
+  color: var(--text);
+  display: grid;
+  place-items: start center;
+  padding: 48px 16px;
+}
+
+.app {
+  width: 100%;
+  max-width: 560px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+header h1 {
+  margin: 0 0 4px;
+  font-size: 22px;
+  letter-spacing: 0.2px;
+}
+
+.sub {
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.add {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.add input {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: #0e1116;
+  color: var(--text);
+  font-size: 14px;
+  outline: none;
+}
+
+.add input:focus {
+  border-color: var(--accent);
+}
+
+.add button,
+.clear {
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.add button:hover,
+.clear:hover {
+  filter: brightness(1.1);
+}
+
+.filters {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.filters button {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.filters button.on {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #0e1116;
+}
+
+.list label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  min-width: 0;
+}
+
+.list span {
+  overflow-wrap: anywhere;
+}
+
+.list li.done span {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.list .del {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.list .del:hover {
+  color: #ff6b6b;
+}
+
+.list .empty {
+  justify-content: center;
+  color: var(--muted);
+  font-size: 13px;
+  border-style: dashed;
+}
+
+.clear {
+  margin-top: 16px;
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.clear:hover {
+  color: var(--text);
+  border-color: var(--muted);
+}
